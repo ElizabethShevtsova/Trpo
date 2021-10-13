@@ -7,16 +7,15 @@ namespace Shevtsova
     class Line
     {
         protected List<float> x;
-        public float[] Linear(float a, float b)
+        public List<float> Linear(float a, float b)
         {
 
             if (a == 0)
             {
-                return null;
+                throw new ShevtsovaException("Определено, что такое уравнение не существует");
             }
-
-            return x = new List<float> { -b / a };
+            ShevtsovaLog.I().log("Определено, что это линейное уравнение");
+            return x = new List<float> { -b/a };
         }
-        public object a;
     }
 }
